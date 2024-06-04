@@ -4,35 +4,18 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "poppins";
-  color: #e5e5e5;
+  color: #000;
 }
 html,
 body {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
-  background: #111;
-  background: radial-gradient(circle, transparent 25%, #111 26%),
-    linear-gradient(
-      45deg,
-      transparent 46%,
-      rgba(106, 98, 255, 0.2) 47%,
-      rgba(106, 98, 255, 0.2) 52%,
-      transparent 53%
-    ),
-    linear-gradient(
-      135deg,
-      transparent 46%,
-      rgba(106, 98, 255, 0.2) 47%,
-      rgba(106, 98, 255, 0.2) 52%,
-      transparent 53%
-    );
-  background-size: 1em 1em;
-  background-color: #111;
+  background-color: #fff;
 }
-body{
-    position: relative;
-    scroll-behavior: smooth;
+body {
+  position: relative;
+  scroll-behavior: smooth;
 }
 a {
   text-decoration: none;
@@ -40,69 +23,74 @@ a {
 ul {
   list-style: none;
 }
-.side{
-    position: fixed;
-    /* display: none; */
-    display: flex;
-    /* align-items: center; */
-    flex-direction: column;
-    top: 0;
-    left: 100%;
-    height: 100vh;
-    width: 100vw;
-    background-color:rgba(0,0,0,0.3);
-    backdrop-filter: blur(10px) brightness(50%);
-    z-index: 10000;
-    padding: 15vw 8vw;
+.side {
+  position: fixed;
+  /* display: none; */
+  display: flex;
+  /* align-items: center; */
+  flex-direction: column;
+  top: 0;
+  left: 100%;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px) brightness(50%);
+  z-index: 10000;
+  padding: 15vw 8vw;
 }
-.side .fa-xmark{
-    position: absolute;
-    right: 10%;
-    font-size: 25px;
-    top: 2%;
-    cursor: pointer;
+.side .fa-xmark {
+  position: absolute;
+  right: 10%;
+  font-size: 25px;
+  top: 2%;
+  color: #e5e5e5;
+  cursor: pointer;
 }
 
-.side h3{
-    font-size: 25px;
-    font-weight: 500;
-    position: relative;
+.side h3 {
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+  color: #e5e5e5;
 }
-.side h3 span{
+.side h3 span {
   font-size: 15px;
   font-weight: 500;
-  margin:0 0 3vw 4vw;
-  color: gray;
+  margin: 0 0 3vw 4vw;
+  color: rgb(200, 200, 200);
   display: inline-block;
   position: absolute;
   bottom: -90%;
 }
-.side>ul{
-    margin-top: 10vw;
-    display: flex;
-    flex-direction: column;
-    gap: 3vw;
+.side > ul {
+  margin-top: 10vw;
+  display: flex;
+  flex-direction: column;
+  gap: 3vw;
 }
-.side ul li{
-    font-size: 24px;
-}
-
-.side .social{
-    display: flex;
-    flex-direction: column;
-    gap: 2vw;
-    position: absolute;
-    bottom: 10%;
-}
-.side .social ul{
-    display: flex;
-    gap: 4vw;
+.side ul li a {
+  font-size: 24px;
+  color: #e5e5e5;
 }
 
-.side .social ul li i{
-    font-size: 30px;
+.side .social {
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+  position: absolute;
+  bottom: 10%;
 }
-
+.side .social ul {
+  display: flex;
+  gap: 4vw;
+}
+.side .social p {
+  color: #e5e5e5;
+}
+.side .social ul li i {
+  font-size: 30px;
+  color: #e5e5e5;
+}
 
 nav {
   display: flex;
@@ -116,12 +104,12 @@ nav ul {
   justify-content: center;
   gap: 3vw;
 }
-nav .fa-bars{
-    font-size: 20px;
-    position: absolute;
-    right: 7%;
-    display: none;
-    cursor: pointer;
+nav .fa-bars {
+  font-size: 20px;
+  position: absolute;
+  right: 7%;
+  display: none;
+  cursor: pointer;
 }
 nav ul li {
   font-size: 15px;
@@ -132,11 +120,11 @@ nav ul li {
 nav ul li::after {
   position: absolute;
   bottom: 0;
-  left: var(--after-value, -100%);
+  left: -100%;
   height: 1px;
   width: 100%;
   content: "";
-  background-color: #5e73fa;
+  background-color:orangered;
   transition: 0.2s;
 }
 nav ul li:hover::after {
@@ -150,15 +138,17 @@ nav ul li:hover::after {
 
 button {
   padding: 0.5rem 2rem;
-  color: #000;
+  color: #fff;
   border: none;
-  background-color: #7e8ef1;
+  background-color: orangered;
   border-radius: 4px;
   position: relative;
   perspective: 100px;
   cursor: pointer;
   transition: background-color 0.37s;
-  font-weight: 600;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 button::after {
   content: "";
@@ -167,7 +157,7 @@ button::after {
   left: 0;
   height: 30px;
   width: 100%;
-  background-color: rgb(126, 142, 241, 0.2);
+  background-color: rgba(0, 0, 0, 0.2);
   filter: blur(10px);
   transform: rotateX(80deg);
   pointer-events: none;
@@ -175,11 +165,9 @@ button::after {
 }
 
 button:hover {
-  background-color: #5e73fa;
+  background-color: rgb(221, 59, 0);
 }
-button:hover::after {
-  background-color: rgb(126, 142, 241, 0.4);
-}
+
 
 .section-1 {
   display: flex;
@@ -193,7 +181,7 @@ button:hover::after {
 
 .left h3 {
   text-transform: uppercase;
-  color: rgb(187, 187, 187);
+  color: rgb(50, 50, 50);
   margin: 6vw 0 1vw 0;
   font-size: 14px;
   letter-spacing: 0.5px;
@@ -204,12 +192,12 @@ button:hover::after {
   line-height: 1.3;
 }
 .left h1 span {
-  color: #7e8ef1;
+  color: orangered;
 }
 .left > p {
   font-size: 12px;
   margin: 1.5vw 0;
-  color: rgb(200, 200, 200);
+  color: #000;
   line-height: 1.7;
 }
 .left .links {
@@ -223,20 +211,25 @@ button:hover::after {
 .links p {
   margin: 3vw 0 0.5vw 0;
   font-size: 14px;
-  color: #7e8ef1;
+  color: #000;
 }
 .links ul li {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 7px;
-  background: linear-gradient(115deg, #111, #333);
-  box-shadow: 0 0 10px #000;
-  border-radius: 5px;
+  background: linear-gradient(115deg, #777, #313131);
+  box-shadow: 1px 1px 10px gray;
+  border-radius: 9px;
 }
-.links ul li a {
-  line-height: 1;
+.links ul li a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.links ul li a i{
   font-size: 25px;
+  color: #e5e5e5;
 }
 .right {
   display: flex;
@@ -244,9 +237,20 @@ button:hover::after {
   justify-content: center;
   height: 100%;
 }
-.right img {
-  width: 50%;
+.right .image1 {
+  overflow: hidden;
+  box-shadow: 10px 10px 10px gray,
+              -10px -10px 20px gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 3;
+  width: 50%;
+}
+.right img {
+  width: 100%;
+  scale: 1.05;
+  object-position: top;
 }
 .right .bg {
   position: absolute;
@@ -267,8 +271,7 @@ button:hover::after {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1vw 6vw;
-  padding-top: 10vw;
+  padding: 10vw 6vw;
 }
 .section-2 > div {
   width: 50%;
@@ -302,7 +305,7 @@ button:hover::after {
   font-size: 1vw;
   margin-bottom: 1vw;
   width: 85%;
-  color: rgb(200, 200, 200);
+  color: #000;
 }
 
 .section-3 {
@@ -311,7 +314,7 @@ button:hover::after {
   justify-content: center;
   flex-direction: column;
   padding: 9vw 0;
-  margin-top: 10vw;
+  padding-top: 10vw;
   background: url(https://4kwallpapers.com/images/walls/thumbs_3t/5584.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -324,6 +327,7 @@ button:hover::after {
   font-size: 25px;
   width: 100%;
   padding: 0 14vw;
+  text-align: center;
 }
 .section-3 > p {
   color: #111;
@@ -331,6 +335,7 @@ button:hover::after {
   width: 100%;
   padding: 0 14vw;
   padding-bottom: 6vw;
+  text-align: center;
 }
 
 .section-3 .cards {
@@ -439,107 +444,104 @@ button:hover::after {
 }
 
 @media (max-width: 750px) {
-    .am-right p {
-      font-size: 1.5vw;
-      width: 100%;
-    }
-    .right img {
-      width: 80%;
-    }
-    button {
-      padding: 0.3rem 1rem;
-    }
-    .cards .card{
-  background: rgb(0, 0, 0, 0.5);
-
-    }
-    .card h2 {
-        font-size: 2.4vw;
-
-      }
-      .card p {
-        font-size: 1.5vw;
-      }
-      .cards .card {
-        width: 27vw;
-        height: 39vw;
-
-      }
-      .card .image {
-        min-height: 15vw;
-      }
+  .am-right p {
+    font-size: 1.5vw;
+    width: 100%;
   }
-  
-@media (max-width: 620px) {
-    nav ul{
-        display: none;
-    }
-    nav button{
-        display: none;
-    }
-    nav .fa-bars{
-        display: block;
-    }
-    .section-1{
-        flex-direction: column;
-        padding: 5vw 10vw;
-    }
-    .section-1>div{
-        width: 100%;
-    }
-    .left h3{
-        font-size: 15px;
-    }
-    .left h1{
-        font-size: 7vw;
-    }
-    .right img{
-        margin-top: 6vw;
-        width: 95%;
-    }
-    .section-2{
-        flex-direction: column;
-    }
-    .section-2>div{
-        width: 100%;
-    }
-    .am-right p {
-        font-size: 3vw;
-    }
-      .section-2 .am-left {
-        justify-content: center;
-      }
-      .section-3 .cards{
-        flex-direction: column;
-      }
-
-      .card h2 {
-        font-size: 5vw;
-      }
-      .card p {
-        font-size: 3vw;
-      }
-      .cards .card {
-        width: 80%;
-        height: fit-content;
-        padding: 4vw 4vw 8vw 4vw;
-
-      }
-      .card .image {
-        height: 40vh;
-      }
-      .section-4 input{
-        padding: 2vw 4vw;
-        width: 90%;
-      }
-      .section-4 textarea{
-        padding: 1vw 4vw;
-        width: 90%;
-      }
-      .section-4 form{
-        width: 100%;
-        gap: 1.5vw;
-      }
+  .right .image1 {
+    width: 80%;
+  }
+  button {
+    padding: 0.3rem 1rem;
+  }
+  .cards .card {
+    background: rgb(0, 0, 0, 0.5);
+  }
+  .card h2 {
+    font-size: 2.4vw;
+  }
+  .card p {
+    font-size: 1.5vw;
+  }
+  .cards .card {
+    width: 27vw;
+    height: 39vw;
+  }
+  .card .image {
+    min-height: 15vw;
+  }
 }
 
+@media (max-width: 620px) {
+  .left .links ul {
+    gap: 4vw;
+  }
+  nav ul {
+    display: none;
+  }
+  nav button {
+    display: none;
+  }
+  nav .fa-bars {
+    display: block;
+  }
+  .section-1 {
+    flex-direction: column;
+    padding: 20vw 5vw;
+  }
+  .section-1 > div {
+    width: 100%;
+  }
+  .left h3 {
+    font-size: 15px;
+  }
+  .left h1 {
+    font-size: 7vw;
+  }
+  .right .image1 {
+    margin-top: 6vw;
+    width: 95%;
+  }
+  .section-2 {
+    flex-direction: column;
+  }
+  .section-2 > div {
+    width: 100%;
+  }
+  .am-right p {
+    font-size: 3vw;
+  }
+  .section-2 .am-left {
+    justify-content: center;
+  }
+  .section-3 .cards {
+    flex-direction: column;
+  }
 
+  .card h2 {
+    font-size: 5vw;
+  }
+  .card p {
+    font-size: 3vw;
+  }
+  .cards .card {
+    width: 80%;
+    height: fit-content;
+    padding: 4vw 4vw 8vw 4vw;
+  }
+  .card .image {
+    height: 40vh;
+  }
+  .section-4 input {
+    padding: 2vw 4vw;
+    width: 90%;
+  }
+  .section-4 textarea {
+    padding: 1vw 4vw;
+    width: 90%;
+  }
+  .section-4 form {
+    width: 100%;
+    gap: 1.5vw;
+  }
+}

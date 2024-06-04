@@ -26,17 +26,19 @@ let loco = () => {
 
     let about = document.querySelector(".about-but")
     about.addEventListener("click", () => {
-        locoScroll.scrollTo("#section-2")
+        locoScroll.scrollTo(".section-2")
     })
     let exp = document.querySelector(".exp-but")
 
     exp.addEventListener("click", () => {
         locoScroll.scrollTo(".section-3")
     })
-    let cont = document.querySelector(".cont-but")
+    let cont = document.querySelectorAll(".cont-but")
 
-    cont.addEventListener("click", () => {
-        locoScroll.scrollTo("#section-4")
+    cont.forEach((cont)=>{
+        cont.addEventListener("click", () => {
+            locoScroll.scrollTo(".section-4")
+        })
     })
 
     // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
