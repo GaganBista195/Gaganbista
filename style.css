@@ -9,6 +9,7 @@
   box-sizing: border-box;
   font-family: neue;
   color: #000;
+  -webkit-tap-highlight-color: transparent;
 }
 html,
 body {
@@ -569,6 +570,8 @@ button:hover {
   }
   .card p {
     font-size: 4vw;
+    margin-top:2vw;
+    line-height: 1.1;
   }
   .cards .card {
     width: 70%;
