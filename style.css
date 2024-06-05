@@ -11,16 +11,18 @@
   color: #000;
   -webkit-tap-highlight-color: transparent;
 }
+html{
+  scroll-behavior: smooth;
+}
 html,
 body {
   height: 100%;
   width: 100%;
-  overflow-x: hidden;
   background-color: #f0f0f0;
 }
 body {
   position: relative;
-  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 a {
   text-decoration: none;
