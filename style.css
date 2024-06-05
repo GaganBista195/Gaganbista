@@ -1,9 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@font-face {
+  font-family: neue;
+  src: url("./NeueMachina-Regular.otf");
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "poppins";
+  font-family: neue;
   color: #000;
 }
 html,
@@ -11,7 +15,7 @@ body {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
-  background-color: #fff;
+  background-color: #f3fffe;
 }
 body {
   position: relative;
@@ -124,7 +128,7 @@ nav ul li::after {
   height: 1px;
   width: 100%;
   content: "";
-  background-color:orangered;
+  background-color: orangered;
   transition: 0.2s;
 }
 nav ul li:hover::after {
@@ -168,7 +172,6 @@ button:hover {
   background-color: rgb(221, 59, 0);
 }
 
-
 .section-1 {
   display: flex;
   align-items: center;
@@ -190,9 +193,11 @@ button:hover {
 .left h1 {
   font-size: 3.7vw;
   line-height: 1.3;
+  font-family: "poppins";
 }
 .left h1 span {
   color: orangered;
+  font-family: "poppins";
 }
 .left > p {
   font-size: 12px;
@@ -222,12 +227,12 @@ button:hover {
   box-shadow: 1px 1px 10px gray;
   border-radius: 9px;
 }
-.links ul li a{
+.links ul li a {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.links ul li a i{
+.links ul li a i {
   font-size: 25px;
   color: #e5e5e5;
 }
@@ -239,8 +244,7 @@ button:hover {
 }
 .right .image1 {
   overflow: hidden;
-  box-shadow: 10px 10px 10px gray,
-              -10px -10px 20px gray;
+  box-shadow: 10px 10px 10px gray, -10px -10px 20px gray;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -282,9 +286,28 @@ button:hover {
   justify-content: end;
   position: relative;
 }
-.section-2 .am-left img {
+.am-left .image2 {
+  cursor: pointer;
+  display: flex;
   width: 90%;
 }
+
+
+
+
+.image2 .inner-image2 {
+  width: 100%;
+  position: relative;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  perspective: 700px;
+}
+.section-2 .am-left .image2 .inner-image2 img {
+  width: 100%;
+  z-index: 3;
+}
+
 .am-left .bg {
   position: absolute;
   height: 300px;
@@ -306,6 +329,7 @@ button:hover {
   margin-bottom: 1vw;
   width: 85%;
   color: #000;
+  font-family: "poppins";
 }
 
 .section-3 {
@@ -315,25 +339,26 @@ button:hover {
   flex-direction: column;
   padding: 9vw 0;
   padding-top: 10vw;
-  background: url(https://4kwallpapers.com/images/walls/thumbs_3t/5584.jpg);
+  /* background: url(https://4kwallpapers.com/images/walls/thumbs_3t/5584.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: center; */
+  background-color: #fff;
   position: relative;
 }
 .section-3 h3 {
   color: #000;
   font-weight: 600;
-  font-size: 25px;
+  font-size: 40px;
   width: 100%;
-  padding: 0 14vw;
+  padding: 0 4vw;
   text-align: center;
 }
 .section-3 > p {
   color: #111;
-  font-size: 13px;
+  font-size: 15px;
   width: 100%;
-  padding: 0 14vw;
+  padding: 0 4vw;
   padding-bottom: 6vw;
   text-align: center;
 }
@@ -348,64 +373,89 @@ button:hover {
 .cards .card {
   width: 23vw;
   height: 33vw;
-  border-radius: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2vw 2vw;
-  background: rgb(0, 0, 0, 0.3);
+  /* padding: 2vw 2vw; */
   backdrop-filter: blur(10px);
   cursor: pointer;
+  transition: 0.2s;
+  /* overflow: hidden; */
+  perspective: 700px;
 }
+
+
 .card .image {
-  min-height: 14vw;
   width: 100%;
+  height: 100%;
   /* background:linear-gradient(180deg,transparent,red); */
   border-radius: 15px;
   overflow: hidden;
+  z-index: 3;
+  border-radius: 15px;
+  box-shadow: 10px 10px 10px gray,
+              -2px -2px 15px gray;
+
 }
 .card .image img {
   height: 100%;
   width: 100%;
   object-fit: cover;
   transition: 0.24s;
+  scale: 1;
 }
-.card:hover img {
-  scale: 1.2;
-}
+
 .card h2 {
   font-weight: 600;
   text-align: left;
   width: 100%;
   padding: 0.5vw;
-  font-size: 1.6vw;
+  font-size: 2vw;
   color: #fff;
-  margin-top: 1vw;
+  margin-top: 5vw;
+  transform: rotateY(180deg);
+
 }
 .card p {
   font-size: 1vw;
   text-align: left;
-  color: rgb(255, 255, 255, 0.8);
+  color: rgb(255, 255, 255,0.8);
   padding: 0 0.5vw;
   text-shadow: 0 0 2px #00000073;
+  transform: rotateY(180deg);
+
 }
+
+.card .paxadi{
+  background-color: #333;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  position: absolute;
+  border-radius: 15px;
+  padding: 1vw;
+}
+
+
+
 .section-4 {
   display: flex;
   align-items: center;
   flex-direction: column;
   padding: 9vw 6vw;
-  background: url(https://4kwallpapers.com/images/walls/thumbs_3t/5584.jpg);
+  /* background: url(https://4kwallpapers.com/images/walls/thumbs_3t/5584.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: center; */
+  background-color: #fff;
 }
 .section-4 h3 {
   font-weight: 500;
-  font-size: 20px;
+  font-size: 30px;
   color: #000;
 }
 .section-4 p {
-  font-size: 15px;
+  font-size: 20px;
   margin-bottom: 4vw;
   color: #000;
 }
@@ -422,7 +472,7 @@ button:hover {
   width: 350px;
   min-height: 150px;
   border: none;
-  background: #00000069;
+  background: rgba(0, 0, 0, 0.412);
   border: 0.5px solid rgba(128, 128, 128, 0.1);
   backdrop-filter: blur(5px);
   border-radius: 5px;
@@ -453,9 +503,6 @@ button:hover {
   }
   button {
     padding: 0.3rem 1rem;
-  }
-  .cards .card {
-    background: rgb(0, 0, 0, 0.5);
   }
   .card h2 {
     font-size: 2.4vw;
@@ -519,18 +566,21 @@ button:hover {
   }
 
   .card h2 {
-    font-size: 5vw;
+    font-size: 6vw;
   }
   .card p {
-    font-size: 3vw;
+    font-size: 4vw;
   }
   .cards .card {
-    width: 80%;
+    width: 70%;
     height: fit-content;
-    padding: 4vw 4vw 8vw 4vw;
+    margin-top: 10vw;
+  }
+  .cards .paxadi{
+    padding: 4vw;
   }
   .card .image {
-    height: 40vh;
+    height: 100vw;
   }
   .section-4 input {
     padding: 2vw 4vw;

@@ -35,7 +35,7 @@ let loco = () => {
     })
     let cont = document.querySelectorAll(".cont-but")
 
-    cont.forEach((cont)=>{
+    cont.forEach((cont) => {
         cont.addEventListener("click", () => {
             locoScroll.scrollTo(".section-4")
         })
@@ -71,5 +71,118 @@ close.addEventListener("click", () => {
         left: `100%`
     })
 })
+
+
+
+function flip() {
+    let tl = gsap.timeline()
+    tl.to(".inner-image2 img, .inner-image2 .back", {
+        rotateY: `180deg`
+    })
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.querySelectorAll(".card").forEach((card, index) => {
+    card.addEventListener("mouseenter", () => {
+        let tl = gsap.timeline()
+        let image = card.children[0]
+        let back = card.children[1]
+        // console.log(tt,bb)
+        tl.to(back, {
+            transform: `rotateY(90deg)`,
+            duration: 0.2,
+            ease: "none"
+        }, "f")
+        tl.to(image, {
+            transform: `rotateY(90deg)`,
+            duration: 0.2,
+            ease: "none"
+        }, "f")
+
+        tl.to(image, {
+            zIndex: 1,
+            duration: 0,
+            boxShadow: `-10px 10px 10px gray,
+            2px -2px 15px gray`,
+        }, "a")
+        tl.to(back, {
+            zIndex: 3,
+            duration: 0
+        }, "a")
+        tl.to(image, {
+            transform: `rotateY(180deg) `,
+            duration: 0.2,
+            ease: "none",
+
+    }, "b")
+    tl.to(back, {
+        transform: `rotateY(180deg) `,
+        duration: 0.2,
+        ease: "none"
+    }, "b")
+
+})
+
+})
+
+
+
+document.querySelectorAll(".card").forEach((card) => {
+    card.addEventListener("mouseleave", () => {
+        let tl = gsap.timeline()
+        let image = card.children[0]
+        let back = card.children[1]
+        tl.to(image, {
+            transform: `rotateY(90deg)`,
+            duration: 0.2,
+            ease: "none"
+        }, "s")
+        tl.to(back, {
+            transform: `rotateY(90deg)`,
+            duration: 0.2,
+            ease: "none"
+        }, "s")
+        tl.to(image, {
+            zIndex: 3,
+            duration: 0,
+            boxShadow: `10px 10px 10px gray,
+            -2px -2px 15px gray`
+        }, "b")
+        tl.to(back, {
+            zIndex: 1,
+            duration: 0
+        }, "b")
+        tl.to(image, {
+            transform: `rotateY(0deg)`,
+            duration: 0.2,
+            ease: "none"
+        }, "y")
+
+        tl.to(back, {
+            transform: `rotateY(0deg)`,
+            duration: 0.2,
+            ease: "none"
+        }, "y")
+    })
+})
+
 
 
